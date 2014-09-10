@@ -1,5 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////
 //Matthew Koh
+//9/10/14   [EDIT]
 //Hw 02
 //Arithmetic Program
 //
@@ -42,8 +43,9 @@ public class Arithmetic{
         double messTaxEnvelopes$=allEnvelopes$*taxPercent;
         
         //Clean up tax
-        int cleanTaxSocks$=(int)(messTaxSocks$*100);            //Saves 2 decimal places
-        double taxSocks$=(double)cleanTaxSocks$/100;            //(Rounded down)
+        int cleanTaxSocks$=(int)(messTaxSocks$*100);            //Saves 2 decimal places(truncated)
+        double taxSocks$=(double)cleanTaxSocks$/100;            
+        //Turns int <cleantax> into a double, then moves 2 decimal places into correct position
         
         int cleanTaxGlasses$=(int)(messTaxGlasses$*100);
         double taxGlasses$=(double)cleanTaxGlasses$/100;
