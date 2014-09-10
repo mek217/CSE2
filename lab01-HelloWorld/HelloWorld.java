@@ -1,5 +1,6 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Matthew Koh
+//9/10/14
 //Lab 01
 //Hello World Java Program
 //
@@ -22,8 +23,6 @@ public class HelloWorld{
         System.out.println("#                            #");
         System.out.println("##############################");
         System.out.println("##############################");
-        System.out.println("test");
             
-        //test/testtest
     }
 }
