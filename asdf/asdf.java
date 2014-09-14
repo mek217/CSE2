@@ -5,7 +5,8 @@
 import java.util.Scanner;
 
 public class asdf{
-    public static void main(String[] args) {
+    
+    public static void main(String[] args){
         
         //Declare an instance of scanner object
         Scanner myScanner;
@@ -13,26 +14,229 @@ public class asdf{
         //Call scanner constructor
         myScanner = new Scanner( System.in );
         
-        //Prompt user for counts on cyclometer
-        System.out.print("Enter number of counts: ");
+        //Prompt user for number for taking the cube root
+        System.out.print("Enter a double and I print its cube root: ");
         
         //Accept user input
-        double nCounts = myScanner.nextDouble();
+        double enteredNumber = myScanner.nextDouble();
         
-        //Calculations
-        double wheelDiameter = 27.0,
-        PI = 3.14159,
-        inchesPerFoot = 12,
-        feetPerMile = 5280,
-        secondsPerMinute = 60,
-        minutesPerHour = 60;
+        //Guess first time
+        double guess = enteredNumber/3;
         
-        //Convert from counts to miles to 2 decimal places
-        int milesDistance = (int)((((wheelDiameter*PI*nCounts)/12)/5280)*100);
-        double totalDistance = (double)milesDistance/100;
+        //Guess using given formula 5 times
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
+        guess = (2*guess*guess*guess+enteredNumber)/(3*guess*guess);
         
-        System.out.println("The distance was "+totalDistance+" miles.");
+        //Print output
+        System.out.println("The cube root is "+guess+':');
+        System.out.println(guess+"*"+guess+"*"+guess+"="+guess*guess*guess);
         
     }
 }
-
