@@ -15,22 +15,24 @@ public class asdf{
         myScanner = new Scanner( System.in );
         
         //
-        System.out.print(": ");
+        System.out.print("Enter a double to get the 4 digits after the decimal point: ");
         
         //Accept user input
-        double cost = myScanner.nextDouble();
+        double number = myScanner.nextDouble();
         
         //Figure out what this shit does
-        int tenths = (int)(cost*10)%10;
-        int hundredths = (int)(cost*100)%10;
-        int thousandths = (int)(cost*1000)%10;
-        int tenThousandths = (int)(cost*10000)%10;
+        int tenths = (int)(number*10)%10;
+        int hundredths = (int)(number*100)%10;
+        int thousandths = (int)(number*1000)%10;
+        int tenThousandths = (int)(number*10000)%10;
+        
+        int fourDigit = tenths*10+hundredths*100+thousandths*1000+tenThousandths*10000;
         
         //Print output
-        System.out.println("The ANSWER is "+tenths+':');
-        System.out.println("The ANSWER is "+hundredths+':');
-        System.out.println("The ANSWER is "+thousandths+':');
-        System.out.println("The ANSWER is "+tenThousandths+':');
+        System.out.println("tenths: "+tenths);
+        System.out.println("hundredths: "+hundredths);
+        System.out.println("thousandths: "+thousandths);
+        System.out.println("tenThousandths: "+tenThousandths);
         
     }
 }

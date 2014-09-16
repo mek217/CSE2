@@ -31,10 +31,10 @@ public class FourDigits{
         int thousandths = (int)(number*1000)%10;
         int tenThousandths = (int)(number*10000)%10;
         
-        int fourDigit = tenths*10+hundredths*100+thousandths*1000+tenThousandths*10000
+        int fourDigit = tenths*10+hundredths*100+thousandths*1000+tenThousandths*10000;
         
         //Print output
-        System.out.println("The first four digits to the right of the decimal of the entered number is: "+fourDigit+);
+        System.out.println("The first four digits to the right of the decimal of the entered number are: "+fourDigit);
         
     }
 }
