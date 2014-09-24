@@ -1,8 +1,16 @@
-public class Lecture{
+import java.util.scanner;
+
+public class Lecture {
+    
     public static void main(String[] args) {
-        double myNumber1 = 3;
-        myNumber1 *= 2;
-        System.out.println("myNumber1 = "+myNumber1);
         
+        double myDouble1 = 3.2;
+        double myDouble2 = 4.5;
+        
+        if( myDouble1 = myDouble2 ) {
+            System.out.println("whoah")
+        }
+        
+        boolean (test) = myDouble1 == myDouble2;
     }
 }
