@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
 //Matthew Koh
 //9/24/14
-//Lab04
+//Hw04
 //Program Month
 //
 //Prompt user to enter an integer for the month (1 for Jan, 2 for Feb, etc.)
