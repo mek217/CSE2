@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
 //Matthew Koh
 //9/29/14
-//Lab05
+//Hw05
 //Program BurgerKing
 //
 //Prompt user to enter a choice of a burger, a soda, or fries. 
