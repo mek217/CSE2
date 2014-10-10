@@ -60,55 +60,68 @@ public class LoopTheLoop{
             }
         }
         
-        //Prompt for user input
-        System.out.print("Enter an int between 1 and 15- ");
+        String lastCheck;
         
-        //Validate: input is an int
-        if(myScanner.hasNextInt()){
+        //Wrap in an infinite loop
+        while(true){
             
-            //Accept user input
-            int userInput = myScanner.nextInt();
+            //Prompt for user input
+            System.out.print("Enter an int between 1 and 15- ");
             
-            //Validate: input is an int between 1 and 15
-            if(userInput>=0 && userInput<=15){
+            //Validate: input is an int
+            if(myScanner.hasNextInt()){
                 
-                //Reset variables for Part 3
-                nStars = userInput;
-                nLine = 0;
-                sentLine = 0;
+                //Accept user input
+                int userInput = myScanner.nextInt();
                 
-                //Start loop
-                while(nStars>0){
-                    nStars--;
-                    nLine++;
+                //Validate: input is an int between 1 and 15
+                if(userInput>=0 && userInput<=15){
+                    
+                    //Reset variables for Part 3
+                    nStars = userInput;
+                    nLine = 0;
                     sentLine = 0;
                     
-                    //Every line needs number of stars == nline
-                    while(nLine>sentLine){
-                        System.out.print('*');
-                        sentLine++;
+                    //Start loop
+                    while(nStars>0){
+                        nStars--;
+                        nLine++;
+                        sentLine = 0;
                         
-                        //Next line and reset line and stars
-                        if(nLine == sentLine){
+                        //Every line needs number of stars == nline
+                        while(nLine>sentLine){
+                            System.out.print('*');
+                            sentLine++;
+                            
+                            //Next line and reset line and stars
+                            if(nLine == sentLine){
+                                System.out.println("");
+                                break;
+                            }
+                        }
+                        
+                        //Break out of loop when nStars == 0
+                        if(nStars == 0){
                             System.out.println("");
                             break;
                         }
                     }
-                    
-                    //Break out of loop when nStars == 0
-                    if(nStars == 0){
-                        System.out.println("");
-                        break;
-                    }
+                }
+                else{
+                    System.out.println("User did not enter an int between 1 and 15");
                 }
             }
             else{
-                System.out.println("User did not enter an int between 1 and 15");
+                System.out.println("User did not enter an int");
+                return;
             }
-        }
-        else{
-            System.out.println("User did not enter an int");
-            return;
+            System.out.print("Enter y or Y to go again- ");
+            lastCheck = myScanner.next();
+            if(lastCheck.equals("Y") || lastCheck.equals("y")){
+            }
+            else{
+                break;
+            }
         }
     }
 }
