@@ -1,12 +1,14 @@
-///////////////////////
-//      TESTING      //
-///////////////////////
+/* Insert System.out.println() statements in the code
+ * below, displaying the status of n and k, which 
+ * should help you identify when n  or k becomes 0 and causes
+ * the program to crash
+ */
 
 import java.util.Scanner;
 
-public class asdf{
+public class Enigma3{
     
-    public static void main(String[] args){
+    public static void main(String [] arg){
         
         int n=40,k=60;
         
@@ -51,6 +53,14 @@ public class asdf{
                 k-=5;
                 break;
         }
-        System.out.println("n: " + n + " k: " + k);
-    }
+        out+=1/n + 1/k;   
+        System.out.println(out);
+  }
 }
+
+/*
+ * Error report:
+ * 50: missing a break
+ * 54: missing a break
+ */
+
