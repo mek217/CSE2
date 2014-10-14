@@ -3,54 +3,64 @@
 ///////////////////////
 
 import java.util.Scanner;
-
 public class asdf{
-    
     public static void main(String[] args){
         
-        int n=40,k=60;
+        //initialize sentinal variables
+        int thousandSent = 0, spinSent = 0;
         
-        String out="";
+        //initialize variables to keep track
+        int winCount = 0;
+        int totalLoss = 0, netGain = 0;
+        int totalMoney = 0;
         
-        switch(k%14){
+        //initialize game variables
+        int betNum = 0;
+        int playNum = 0;
+        final int WIN$ = 36;
+        
+        //In simulation
+        while(thousandSent < 1000){
+            thousandSent++;
             
-            case 12: 
-            case 13: out+=13;
-                break;
-            default: out+=40;
-                n/=3;
-                k-=7;
+            //Make sure to reset the sentinal values in the nested loops after every run
+            spinSent = 0;
+            
+            //Also reset winCount for each game
+            winCount = 0;
+            
+            //Place a bet
+            betNum = (int)(Math.random() * 38) + 1;
+             
+            //Spin 100 times
+            while(spinSent++ < 100){
+                
+                //Randomize each played number
+                playNum = (int)(Math.random() * 38) + 1;
+                
+                //Keep track of winCount
+                if(playNum == betNum){
+                    winCount++;
+                }
+            }
+            
+            //After game, calculate if there was a net gain or total loss
+            if(winCount >= 3){
+                netGain++;
+            }
+            else if(winCount == 0){
+                totalLoss++;
+            }
+            //Add to the money gained over 1000 simulations
+            totalMoney += winCount * WIN$;
         }
-        if(n*k%12< 12){
-            n-=20;
-            out+=n;
-        }
-        if(n*n>k){
-            n=42;
-            out+=n+k;
-        }
-        else {
-            n=45;
-            out+=n+k;
-        }
-        switch(n+k){
-            case 114: 
-                n-=11;
-                k-=3;
-                break;
-            case 97:
-                n-=14;
-                k-=2;
-                break;
-            case 98:
-                n/=5;
-                k/=9;
-                break;
-            default:
-                n-=3;
-                k-=5;
-                break;
-        }
-        System.out.println("n: " + n + " k: " + k);
+        
+        //Print results
+        System.out.println("Out of the 1000 simulations of 100 spins of a Roulette table, ");
+        System.out.println("You profited from the table " + netGain + " times, ");
+        System.out.println("You lost all your money " + totalLoss + " times, ");
+        System.out.println("And you recieved $" + totalMoney + " in winnings. ");
+        System.out.println("However, this is how much you would receive ");
+        System.out.println("AFTER you spend $100,000 from joining the table a thousand times. ");
     }
 }
