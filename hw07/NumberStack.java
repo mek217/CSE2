@@ -29,23 +29,23 @@ public class NumberStack{
         Scanner myScan;
         myScan = new Scanner(System.in);
         
-        //WHILE LOOP
+        
+        //WITH FOR LOOPS
         //Prompt user to enter an int between 1 and 9
         System.out.print("Enter a number between 1 and 9- ");
         
         //Initialize input variable
         int userInput = 0;
-
+        
         //wrap the user input validation in an infinite loop
-        while(true){
-
+        for( ; true; ){
+            
             //Set/reset variable for user input
             userInput = 0;
             
             //Validate: user input is an int
-            while(!myScan.hasNextInt()){
-                
-                myScan.next(); //get rid of the junk entered by user
+            for(;!myScan.hasNextInt();){
+                myScan.next(); //get rid of the junk entered by the user
                 System.out.print("You did not enter an int; try again- ");
                 
             }
@@ -57,23 +57,83 @@ public class NumberStack{
                 
                 //Reset user input variable
                 userInput = 0;
-
-                System.out.print("You did not enter an int between 1 and 9; try again- ");
+                
+                System.out.print("You did not enter an int between 1 and 9; try again-");
                 
                 //If not between 1 and 9, then reset validation
                 continue;
-
-            }else{
-
-                //If between 1 and 9, break from validation loop and continue with the rest of your life
+            }
+            else{
+                
+                //If between 1 and 9, break from validation loop and continue
                 break;
                 
             }
         }
-        System.out.println();
+        
+        System.out.println("Using for loops: ");
+        
+        //Initialize variables
+        int blockSent = 0;
+        int lineSent = 0;
+        int spaces = userInput;
+        int spaceSent = 0;
+        int numbers = 1;
+        int numberSent = 0; 
+        
+        //Start while loop to build pryamid
+        //Make (userInput blocks)
+        for(blockSent = 0; blockSent < userInput; ++blockSent){
+            
+            //Make number of lines
+            for(lineSent = 0; lineSent < blockSent + 2; ++lineSent){
+                
+                //Make spacing left of numbers
+                for(spaceSent = 0; spaceSent < spaces; ++spaceSent){
+                    System.out.print(" ");
+                    
+                }
+                
+                for(numberSent = 0; numberSent < 2*numbers - 1; ++numberSent){
+                    
+                    //Change last line into dashes instead of numbers
+                    if(lineSent == blockSent + 1){
+                        System.out.print('-');
+                    }
+                    else{
+                        System.out.print(numbers);
+                    }
+                }
+                
+                //Make spacing right of numbers
+                for(spaceSent = 0; spaceSent < spaces;){
+                    System.out.print(" ");
+                    
+                    ++spaceSent;
+                    
+                    if(spaceSent == spaces){
+                        System.out.println();
+                    }
+                }
+                
+            }
+            
+            //increment all values inside the loops
+            spaces -= 1;
+            numbers += 1;
+            
+        }
+        
+        
+        System.out.println("Using while loops: ");
 
         //Initialize Variables
-        int blockSent = 0, lineSent = 0, spaces = userInput, spaceSent = 0, numbers = 1, numberSent = 0; 
+        blockSent = 0;
+        lineSent = 0;
+        spaces = userInput;
+        spaceSent = 0;
+        numbers = 1;
+        numberSent = 0; 
 
         //Start while loop to build pyramid
         //Make (userInput) blocks
@@ -107,7 +167,7 @@ public class NumberStack{
 
                 }
                 
-                //Set inner loop sentinel valu
+                //Set inner loop sentinel value
                 numberSent = 0;
 
                 //Make spacing right of numbers
@@ -128,13 +188,7 @@ public class NumberStack{
 
             //Reset inner loop sentinel value
             lineSent = 0;
-
-//            //Print number of dashes equal to number of numbers
-//            while(numberSent < numbers){
-//                System.out.print('-');
-//                ++numberSent;
-//            }
-
+            
             //Reset inner loop sentinel value
             numberSent = 0;
 
@@ -143,8 +197,96 @@ public class NumberStack{
             numbers += 1;
 
             //Make new block
-            System.out.println();
             ++blockSent;
         }
+        
+        System.out.println("Using do while loops: ");
+
+        //Initialize Variables
+        blockSent = 0;
+        lineSent = 0;
+        spaces = userInput;
+        spaceSent = 0;
+        numbers = 1;
+        numberSent = 0; 
+        
+        
+        if(blockSent < userInput){
+            do{
+                
+                if(lineSent < blockSent + 2){
+                    do{
+
+                        //Make spacing left of numbers
+                        if(spaceSent < spaces){
+                            do{
+                                System.out.print(" ");
+                                ++spaceSent;
+                            }
+                            while(spaceSent < spaces);
+                        }
+                        
+                        //Reset inner loop sentinel value
+                        spaceSent = 0;
+                        
+                        //Make numbers
+                        if(numberSent < 2*numbers-1){
+                            do{
+                                    //Change last line into dashes instead of numbers
+                                if(lineSent == blockSent + 1){
+                                    System.out.print('-');
+                                }
+                                else{
+                                    System.out.print(numbers);
+                                }
+                                
+                                ++numberSent;
+                            }
+                            while(numberSent < 2*numbers-1);
+                        }
+                        
+                        //Set inner loop sentinel value
+                        numberSent = 0;
+                        
+                        //Make spacing right of numbers
+                        if(spaceSent < spaces){
+                            do{
+                                System.out.print(" ");
+                                ++spaceSent;
+                                
+                            }
+                            while(spaceSent < spaces);
+                        }
+                        
+                        //Reset inner loop sentinel value
+                        spaceSent = 0;
+                        
+                        //Next line in block
+                        System.out.println();
+                        ++lineSent;
+                        
+                    }
+                    while(lineSent < blockSent + 2);
+                }
+                
+
+                //Reset inner loop sentinel value
+                lineSent = 0;
+                
+                //Reset inner loop sentinel value
+                numberSent = 0;
+                
+                //increment all values inside the loops
+                spaces -= 1;
+                numbers += 1;
+                
+                //Make new block
+                ++blockSent;
+            }
+            while(blockSent < userInput);
+        }
+        
+        
+        
     }
 }
