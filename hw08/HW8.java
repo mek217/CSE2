@@ -21,40 +21,40 @@
 //New: .charAt(n): returns nth character
 
 import java.util.Scanner;
-public class HW8{
-    public static void main(String[] arg){
+public class HW8 {
+    public static void main(String[] arg) {
         char input;
         Scanner scan = new Scanner(System.in);
-        
+
         System.out.print("Enter 'C' or 'c' to continue, anything else to quit- ");
-        input=getInput(scan,"Cc");                                                  //Overload type 1
-        System.out.println("You entered '"+input+"'");
-        
+        input = getInput(scan, "Cc"); //Overload type 1
+        System.out.println("You entered '" + input + "'");
+
         System.out.print("Enter 'y', 'Y', 'n', or 'N'- ");
-        input=getInput(scan,"yYnN",5); //give up after 5 attempts                   //Overload type 2
-        if(input!=' '){
-            System.out.println("You entered '"+input+"'");
+        input = getInput(scan, "yYnN", 5); //give up after 5 attempts               //Overload type 2
+        if (input != ' ') {
+            System.out.println("You entered '" + input + "'");
         }
-        
-        input=getInput(scan,"Choose a digit.","0123456789");                        //Overload type 3
-        System.out.println("You entered '"+input+"'");
-        
+
+        input = getInput(scan, "Choose a digit.", "0123456789");                    //Overload type 3
+        System.out.println("You entered '" + input + "'");
+
     }
 
-    public static char getInput(Scanner scan, String cont){                         //Overload method type 1
+    public static char getInput(Scanner scan, String cont) {                        //Overload method type 1
         char userChar;
         int tries = 0;
-        while(true){
+        while (true) {
             cont = scan.next();
-            if(cont.length() != 1){
+            if (cont.length() != 1) {
                 System.out.print("You should enter exactly one character- ");
                 continue;
             }
-            else{
-                if(cont.equals("c") || cont.equals("C")){
+            else {
+                if (cont.equals("c") || cont.equals("C")) {
                     return userChar = cont.charAt(0);
                 }
-                else{
+                else {
                     System.out.println("cont: " + cont);
                     System.out.print("You did not enter a character from the list 'Cc'; try again- ");
                     continue;
@@ -62,21 +62,21 @@ public class HW8{
             }
         }
     }
-    
-    public static char getInput(Scanner scan, String cont, int tries){              //Overload method type 2
+
+    public static char getInput(Scanner scan, String cont, int tries) {             //Overload method type 2
         char userChar;
-        while(tries > 0){
+        while (tries > 0) { //Return ' ' if user inputs an incorrect value (int tries) times
             --tries;
             cont = scan.next();
-            if(cont.length() != 1){
+            if (cont.length() != 1) {
                 System.out.print("You should enter exactly one character- ");
                 continue;
             }
-            else{
-                if(cont.equals("y") || cont.equals("Y") || cont.equals("n") || cont.equals("N")){
+            else {
+                if (cont.equals("y") || cont.equals("Y") || cont.equals("n") || cont.equals("N")) {
                     return userChar = cont.charAt(0);
                 }
-                else{
+                else {
                     System.out.print("You did not enter a character from the list 'yYnN'; try again- ");
                     continue;
                 }
@@ -86,24 +86,24 @@ public class HW8{
         System.out.println("You failed after 5 tries");
         return userChar = ' ';
     }
-    
-    public static char getInput(Scanner scan, String cont, String number){           //Overload method type 3
+
+    public static char getInput(Scanner scan, String cont, String number) {         //Overload method type 3
         char userChar;
-        while(true){
+        while (true) {
             System.out.println("Choose a digit.");
             System.out.print("Enter one of: '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'- ");
             cont = scan.next();
-            if(cont.length() != 1){
+            if (cont.length() != 1) {
                 System.out.println("Enter exactly one character");
                 continue;
             }
-            else{
-                for(int check = 0; check <= 9; check++){                            //Check that input cont is one of the digits in String number
-                    if (cont.charAt(0) == number.charAt(check)){
-                    return userChar = cont.charAt(0);
+            else {
+                for (int check = 0; check <= 9; check++) {                          //Check that input cont is one of the digits in String number
+                    if (cont.charAt(0) == number.charAt(check)) {
+                        return userChar = cont.charAt(0);
                     }
                 }
-                System.out.println("You did not enter an acceptable character");
+                System.out.println("You did not enter an acceptable character");    //If method reaches this point then user did not enter an acceptible character
                 continue;
             }
         }
