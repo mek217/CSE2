@@ -22,135 +22,58 @@
 import java.util.Scanner;
 public class asdf{
     public static void main(String[] args){
-        Scanner myScan;
-        myScan = new Scanner(System.in);
-        
-        
-        //WITH FOR LOOPS
-        //Prompt user to enter an int between 1 and 9
-        System.out.print("Enter a number between 1 and 9- ");
-        
-        //Initialize input variable
-        int userInput = 0;
-        
-        //wrap the user input validation in an infinite loop
-        for( ; true; ){
-            
-            //Set/reset variable for user input
-            userInput = 0;
-            
-            //Validate: user input is an int
-            for(;!myScan.hasNextInt();){
-                myScan.next(); //get rid of the junk entered by the user
-                System.out.print("You did not enter an int; try again- ");
-                
-            }
-            
-            userInput = myScan.nextInt();
-            
-            //Validate: user input is an int between 1 and 9
-            if(userInput < 1 || userInput > 9){
-                
-                //Reset user input variable
-                userInput = 0;
-                
-                System.out.print("You did not enter an int between 1 and 9; try again-");
-                
-                //If not between 1 and 9, then reset validation
-                continue;
-            }
-            else{
-                
-                //If between 1 and 9, break from validation loop and continue
-                break;
-                
-            }
-        }
-        
-        System.out.println("Using do while loops: ");
+    Scanner scan = new Scanner(System.in);
+    int a, b, c;
+    System.out.println("Enter three ints");
+    a = getInt(scan);
+    b = getInt(scan);
+    c = getInt(scan);
+    System.out.println("The larger of " + a + " and " + b + " is " + larger(a, b));
+    System.out.println("The larger of " + a + ", " + b + ", and " + c + " is " + larger(a, larger(b, c)));
+    System.out.println("It is " + ascending(a, b, c) + " that " + a + ", " + b + ", and " + c + " are in ascending order");
+  }
 
-        //Initialize Variables
-        int blockSent = 0;
-        int lineSent = 0;
-        int spaces = userInput;
-        int spaceSent = 0;
-        int numbers = 1;
-        int numberSent = 0; 
-        
-        
-        if(blockSent < userInput){
-            do{
-                
-                if(lineSent < blockSent + 2){
-                    do{
+  public static int getInt(Scanner scan) {
+    
+    while (true) {
+      System.out.println("Enter an int: ");
+      if (!scan.hasNextInt()) {
+        scan.next();
+        continue;
+      }
+      else {  return scan.nextInt();  }
+    
+  }
 
-                        //Make spacing left of numbers
-                        if(spaceSent < spaces){
-                            do{
-                                System.out.print(" ");
-                                ++spaceSent;
-                            }
-                            while(spaceSent < spaces);
-                        }
-                        
-                        //Reset inner loop sentinel value
-                        spaceSent = 0;
-                        
-                        //Make numbers
-                        if(numberSent < 2*numbers-1){
-                            do{
-                                    //Change last line into dashes instead of numbers
-                                if(lineSent == blockSent + 1){
-                                    System.out.print('-');
-                                }
-                                else{
-                                    System.out.print(numbers);
-                                }
-                                
-                                ++numberSent;
-                            }
-                            while(numberSent < 2*numbers-1);
-                        }
-                        
-                        //Set inner loop sentinel value
-                        numberSent = 0;
-                        
-                        //Make spacing right of numbers
-                        if(spaceSent < spaces){
-                            do{
-                                System.out.print(" ");
-                                ++spaceSent;
-                                
-                            }
-                            while(spaceSent < spaces);
-                        }
-                        
-                        //Reset inner loop sentinel value
-                        spaceSent = 0;
-                        
-                        //Next line in block
-                        System.out.println();
-                        ++lineSent;
-                        
-                    }
-                    while(lineSent < blockSent + 2);
-                }
-                
 
-                //Reset inner loop sentinel value
-                lineSent = 0;
-                
-                //Reset inner loop sentinel value
-                numberSent = 0;
-                
-                //increment all values inside the loops
-                spaces -= 1;
-                numbers += 1;
-                
-                //Make new block
-                ++blockSent;
-            }
-            while(blockSent < userInput);
-        }
-    }
+  public static int larger (int a, int b) { return a; }
+  
+  public static Boolean ascending (int num1, int num2, int num3) { return true;}
+// return (num1 >= num2) ? num1 : num2; 
+//(num1 < num2 && num1 < num3 && num2 < num3) ? true : false; 
+  /*******SAMPLE RUNS:
+
+  VALIDATION
+  Enter three ints
+  Enter an int- r
+  You did not enter an int; try again- 3
+  Enter an int- 8
+  Enter an int- 9
+
+  The larger of 3 and 8 is 8
+  The larger of 3, 8, and 9 is 9
+  It is true that 3, 8, and 9 are in ascending order
+
+
+
+  VALIDATION
+  Enter three ints
+  Enter an int- 4
+  Enter an int- 3
+  Enter an int- 7
+
+  The larger of 4 and 3 is 4
+  The larger of 4, 3, and 7 is 7
+  It is false that 4, 3, and 7 are in ascending order
+  */
 }
