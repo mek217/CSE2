@@ -1,6 +1,19 @@
-import java.util.Scanner;
+////////////////////////////////////////////////////////////////////////////
+//Matthew Koh
+//11/3/14
+//Lab10
+//Program MethodCalls
+//
+//Make the appropriate method
+/*
+Add 3 to 784 to get 3784
+Add 3, 4, and 5 to 784 to get 543784
+Add 3 to -98 to get: -398
+Join 784 to 22 to get 78422
+Join 87, 42, and 83 to get 874283
+Join -9 and -90 to get 990
+*/
 
-import java.util.Scanner;
 public class MethodCalls {
     public static void main(String[] arg) {
         int a = 784, b = 22, c;
