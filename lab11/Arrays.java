@@ -27,6 +27,7 @@ The sum is 258
      2      8
     89     20
     70     -9
+
     */
 
 import java.util.Scanner;
@@ -53,15 +54,28 @@ public class Arrays{
         System.out.println("The highest entry is " + max);
         System.out.println("The sum is " + sum);
         
-        int[] reverseArray = new int[TEN_INT_ARRAY];                             //Copy contents of the array into second array in reverse order
-        for(int k=0; k<TEN_INT_ARRAY; k++;){reverseArray[k] = tenArray[TEN_INT_ARRAY-k];}
+        int[] reverseArray = new int[TEN_INT_ARRAY];                             //Copy contents of the array into second arry in reverse order
+        for(int k=0; k<TEN_INT_ARRAY; k++){
+            reverseArray[k] = tenArray[(TEN_INT_ARRAY-1)-k];
+        }
         
         
         for(int l=0; l<TEN_INT_ARRAY; l++){
-            String spacing = (tenArray[l]>=10) ? "    " : "     ";              //Account for number length
-            System.out.print("     " + tenArray[l] + spacing + reverseArray[l]);
+            String space1 = "    ", space2 = "    ";
+            space1 = 
+/*
+FIRST
+    1digit: +5
+    -1digit: +4
+    2digit: +4
+    -2digit: +3
+
+SECOND
+*/
+            String spacing = (tenArray[l]<0) ? "" : " ";                        //Account for number length
+            spacing = (tenArray[l]*tenArray[l]<100) ? spacing+"    " : spacing+"   ";
+            System.out.println("     " + tenArray[l] + spacing + reverseArray[l]);
         }
-        
         
     }
 }
