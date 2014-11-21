@@ -25,7 +25,6 @@ public class FindDuplicates{
         Scanner scan=new Scanner(System.in);
         int num[]=new int[10];
         String answer="";
-        
         do{
             System.out.print("Enter 10 ints- ");
             for(int j=0; j<10; j++){num[j]=scan.nextInt();}
@@ -59,7 +58,7 @@ public class FindDuplicates{
     public static boolean hasDups(int[] list){
         boolean anyDups=false;
         for(int k=0; k<list.length; k++){                                       //increments the 'sentry' element of the array
-            for(int l=k+1; l<list.length; l++){                                     //compares sentry element with every nonchecked element in set
+            for(int l=k+1; l<list.length; l++){                                 //compares sentry element with every nonchecked element in set
                 if(list[k]==list[l]){anyDups=true;}
             }
         }

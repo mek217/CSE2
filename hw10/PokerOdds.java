@@ -1,39 +1,22 @@
-///////////////////////
-//      TESTING      //
-///////////////////////
-
 ////////////////////////////////////////////////////////////////////////////
 //Matthew Koh
-////14
-//Lab/Hw
-//Program Name
+//11/20/14
+//Hw10
+//Program PokerOdds
 //
-//Start
+//
+/*
+Use the main method provided below and do not change it, then write the methods showOneHand() and simulateOdds().
+*/
 
 import java.util.Random;
 import java.util.Scanner;
-public class asdf{
-    public static void main(String args[]){
+
+public class PokerOdds{
+    public static void main(String [] arg){
         showHands();
-        simulateOdds();
+//        simulateOdds();
         
-    }
-    
-    public static void deckMaker(){
-        int deck[]=new int[52];                                             //Make deck
-        for(int i=0; i<52; i++){deck[i]=i;}
-        
-        int hand[]=new int[5];                                              //Make hand
-        for(int j=0; j<5; j++){hand[j]=-1;}
-        
-        int chosenPosition=0, tempHand=0;                                   //Initialize variables
-        for(int k=0; k<5; k++){                                             //Pick a random value for hand
-            chosenPosition=(int)(Math.random()*(51-k));                     //Make chosenPosition equal a number between 0 and (51-k)
-            tempHand=hand[k];                                               //Save hand[] value
-            hand[k]=deck[chosenPosition];                                   //Move deck[chosenPosition] to hand[k]
-            for(int l=chosenPosition; l<(51-k); l++){deck[l]=deck[l+1];}    //Remove deck[chosenPosition]from deck[] and shift values by 1
-            deck[51-k]=tempHand;                                            //Move the -1 hand[k] value to the end of the deck
-        }
     }
     
     public static void showHands(){
@@ -88,11 +71,6 @@ public class asdf{
             System.out.print("Go again? Enter 'y' or 'Y', anything else to quit- ");
             answer=scan.next();
         }while(answer.equals("y") || answer.equals("Y"));
-    }
-    
-    public static void simulateOdds(){
-        System.out.println("  rank   freq of exactly one pair")
-        for()
     }
     
 }
