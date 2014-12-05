@@ -19,45 +19,19 @@ public class PokerOdds{
         
     }
     
-    public static int[] handMaker(int[] hand, int[] deck){
-        int chosenPosition=0, tempHand=0;                                       //Initialize variables
-        for(int k=0; k<hand.length; k++){                                                 //Pick a random value for hand
-            chosenPosition=(int)(Math.random()*(deck.length-k));                         //Make chosenPosition equal a number between 0 and (deck.length-k)
-            tempHand=hand[k];                                                   //Save hand[] value
-            hand[k]=deck[chosenPosition];                                       //Move deck[chosenPosition] to hand[k]
-            for(int l=chosenPosition; l<(deck.length-k); l++){deck[l]=deck[l+1];}        //Remove deck[chosenPosition]from deck[] and shift values by 1
-            deck[deck.length-k]=tempHand;                                                //Move the -1 hand[k] value to the end of the deck
-        }
-        return hand, deck;
-    }
-    
     public static void showHands(){
         Scanner scan = new Scanner(System.in);
         String answer="";
         do{
-            int[] deck=new int[52];                                             //Make deck
-            for(int i=0; i<52; i++){deck[i]=i;}
-            
             int[] hand=new int[5];                                              //Make hand
             for(int j=0; j<5; j++){hand[j]=-1;}
             
-            hand=handMaker(hand, deck);                             //Call handMaker
+            hand=handMaker(hand);                                               //Call handMaker
             
             String clubs="Clubs:    ", diamonds="Diamonds: ", hearts="Hearts:   ", spades="Spades:   ";
             String[] cardInHand=new String[5];
+            cardInHand=handMaker(cardInHand, hand);
             for(int m=0; m<cardInHand.length; m++){
-                switch((hand[m]+1)%13){
-                    case 9:  cardInHand[m]="J ";
-                        break;
-                    case 10: cardInHand[m]="Q ";
-                        break;
-                    case 11: cardInHand[m]="K ";
-                        break;
-                    case 12: cardInHand[m]="A ";
-                        break;
-                    default: cardInHand[m]=Integer.toString(hand[m]+2)+" ";
-                        break;
-                }
                 switch(hand[m]/13){
                     case 0: clubs+=cardInHand[m];
                         break;
@@ -69,6 +43,7 @@ public class PokerOdds{
                         break;
                 }
             }
+            
             System.out.println(clubs);
             System.out.println(diamonds);
             System.out.println(hearts);
@@ -81,28 +56,76 @@ public class PokerOdds{
     public static void simulateOdds(){
         int[] thousandTries=new int[13];
         for(int z=0; z<thousandTries.length; z++){thousandTries[z]=0;}          //Initialize thousandTries array
-        int noDup=0, theDup;
+        int[] hand=new int[5];                                                  //Make hand
+        for(int j=0; j<5; j++){hand[j]=-1;}
+        int noDup=0;
         for(int trials=0; trials<10000; trials++){                              //10000 trials: if random hand has exactly one dup, add 1 to thousandTries[theDup]
-            handMaker(hand, deck);
-            if(FindDuplicates.exactlyOneDup(hand);){
-                for(int dupFinder=0; dupFinder<hand.length-1; dupFinder++){
-                    for(theDup=dupFinder+1; theDup<hand.length; theDup++){
-                        if(hand[theDup]==hand[dupFinder]){break;}
+            hand=handMaker(hand);
+            for(int x=0; x<hand.length; x++){
+                hand[x]=(hand[x]+1)%13;
+            }
+            FindDuplicates finder = new FindDuplicates();
+            boolean dupFound=false;
+            int y=0, z=0;
+            if(finder.exactlyOneDup(hand)){
+                for(y=0, dupFound=false; y<hand.length; y++){
+                    for(z=y+1; z<hand.length; z++){
+                        if(hand[y]==hand[z]){
+                            dupFound=true;
+                            thousandTries[hand[z]]+=1;
+                            break;
+                        }
+                        if(dupFound){break;}
                     }
-                    if(hand[theDup]==hand[dupFinder]){break;}
+                    if(dupFound){break;}
                 }
-                thousandTries[theDup]+=1;
             }else{noDup++;}
         }
-        System.out.println("  rank   freq of exactly one pair")
+        System.out.println("  rank   freq of exactly one pair");
         for(int card=0; card<13; card++){
             String leftSpace="   ";
             String rightSpace="       ";
-            if(card!=8){leftSpace+=" "};
-            System.out.println(leftSpace+cardInHand+rightSpace+thousandTries[card]);
+            if(card!=8){leftSpace+=" ";}
+            String[] cardInHand=new String[13];
+            int[] deck=new int[52];                                             //Make deck
+            for(int i=0; i<=51; i++){deck[i]=i;}
+            cardInHand=handMaker(cardInHand, deck);
+            System.out.println(leftSpace+cardInHand[card]+rightSpace+thousandTries[card]);
         }
         System.out.println("----------------------------");
         System.out.println(" total not exactly one pair: "+noDup);
+    }
+    
+    public static int[] handMaker(int[] hand){
+        int chosenPosition=0, tempHand=0;                                       //Initialize variables
+        int[] deck=new int[52];                                                 //Make deck
+        for(int i=0; i<=51; i++){deck[i]=i;}
+        for(int k=0; k<hand.length; k++){                                       //Pick a random value for hand
+            chosenPosition=(int)(Math.random()*(51-k));                         //Make chosenPosition equal a number between 0 and (51-k)
+            tempHand=hand[k];                                                   //Save hand[] value
+            hand[k]=deck[chosenPosition];                                       //Move deck[chosenPosition] to hand[k]
+            for(int l=chosenPosition; l<(51-k); l++){deck[l]=deck[l+1];}        //Remove deck[chosenPosition]from deck[] and shift values by 1
+            deck[51-k]=tempHand;                                                //Move the -1 hand[k] value to the end of the deck
+        }
+        return (hand);
+    }
+    
+    public static String[] handMaker(String[] cardInHand, int[] hand){
+        for(int m=0; m<cardInHand.length; m++){
+            switch((hand[m]+1)%13){
+                case 10: cardInHand[m]="J ";
+                    break;
+                case 11: cardInHand[m]="Q ";
+                    break;
+                case 12: cardInHand[m]="K ";
+                    break;
+                case 0:  cardInHand[m]="A ";
+                    break;
+                default: cardInHand[m]=Integer.toString(m+2)+" ";
+                    break;
+            }
+        }
+        return (cardInHand);
     }
     
 }

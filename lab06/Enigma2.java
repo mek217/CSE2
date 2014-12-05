@@ -20,10 +20,13 @@ public class Enigma2{
 /*
  * Error Report: Explain how you can use the java.lang exception to
  *     identify the runtime error in the above code
+ * Error: 
+ * Exception in thread "main" java.lang.ArithmeticException: / by zero
+ *         at Enigma2.main(Enigma2.java:14)
  * 
- * 
- * 
- * 
+ * Interpretation:
+ * There exists a runtime error on line 14 of the code shown above.
+ * The exception says you cannot divide by zero, which is what happens at line 14. 
  * 
  */
 
