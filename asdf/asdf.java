@@ -32,16 +32,14 @@ public class asdf{
         System.out.println();
         
         int v=0, w=0, x=0, y=0, z=0, smallest=0;
-        for(w=0;w<start.length;w++){                                        //Number Row
+        for(w=0;w<start.length;w++){                                            //Number Row
             for(x=0;x<start[w].length;x++){                                     //Number Element
-                for(y=x;y<start[w].length;y++){
+                for(y=x;y<start[w].length;y++){                                 //Sort
                     smallest=0;
-                    for(z=y;z<start[w].length;z++){
-                        //System.out.println("y after equaling x: "+y);
+                    for(z=y;z<start[w].length;z++){                             //Search row for smallest element
                         if(start[w][z]<start[w][x]){smallest=z;}
-                        //System.out.println("Line: "+w+", sort #"+(x+1)+". Smallest element out of elems "+sortSize(start, w, y)+": "+start[w][smallest]);
                     }
-                    if(start[w][y]>start[w][smallest]){
+                    if(start[w][y]>start[w][smallest]){                         //Swap Number element with smallest element
                         int temp=start[w][y];
                         start[w][y]=start[w][smallest];
                         start[w][smallest]=temp;
